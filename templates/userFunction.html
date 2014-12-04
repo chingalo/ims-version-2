@@ -691,7 +691,7 @@
 		
 		
 		<!-- for smart phones and tablests --->
-			<div class = "row-fluid hidden-desktop" style = "max-width:98%;margin:auto; border-radius:3px;padding:1px; background:#E5E5E5;">
+			<div class = "row-fluid hidden-desktop" style = "max-width:98%;margin:auto; border-radius:3px;padding:1px; background:#F5F5F5;">
 			<p style = "text-align:center;">Fill the folowing fields to create and assign new issue to a user</p>
 			<hr>			
 			<form class="form-horizontal"  method = "POST" action ="{% url 'createIssue' user.id project.id %}" onsubmit = "return createNewIssue()" >
@@ -764,7 +764,7 @@
 		{% if contents == 'singleissue' %} 
 		{% if user.activationStatus == 'enable' %}
 		<!--- -- for smart phones and tablests on status and status logs----->
-		<div class = "hidden-desktop status" style = "margin-bottom:5%;max-width:98%;background:#EDEDEF;margin:auto;border-radius:5px;border:1px solid #BFBFBF;text-align:center;" >			
+		<div class = "hidden-desktop status" style = "margin-bottom:5%;max-width:98%;background:#F5F5F5;margin:auto;border-radius:5px;border:1px solid #BFBFBF;text-align:center;" >			
 			Status changes and status logs	
 		</div>	
 		<div class = "statusLogs" >
@@ -793,7 +793,9 @@
 		
 		<div class = "row-fluid" style = "margin-top:3%;">
 			<!-- details and comments for a given issue -->	
-				<div class = "hidden-desktop" style = "border-radius:5px;background:#E5E5E5;margin:auto;padding:1px; max-width:98%;">
+			
+			<!-- for smart phones and tablets-->
+				<div class = "hidden-desktop" style = "border-radius:5px;background:#F5F5F5;margin:auto;padding:1px; max-width:98%;">
 					<!-- deatails for a given issue-- issueAssignee-->
 					<h4><u>{{ issue.title|title }}</u></h4>
 					<p>&nbsp;&nbsp;{{ issue.description }}<br>
@@ -826,9 +828,8 @@
 				</div>
 				
 				
-				
-				
-				<div class = "span8 visible-desktop">
+				<!--- for desktop ---->				
+				<div class = "span7 visible-desktop">
 				<div class = "well ">
 						<!-- deatails for a given issue-- issueAssignee-->
 					<h4><u>{{ issue.title|title }}</u></h4>
@@ -899,7 +900,7 @@
 		
 		<!-- view profile ----->
 		{%if contents == 'viewProfile' %}
-		<div class = " profile " >
+		<div class = "profile">
 			<div class = "visible-desktop">
 				<h5>Account Profile's details</h5>
 				<table class = "table table-hover"> 
@@ -932,7 +933,9 @@
 					</tbody>
 				</table>
 				</div>
-				<div class = "hidden-desktop">
+				
+				<!--- for smartphones and tablets --->
+				<div class = "hidden-desktop" style = "background:#F5F5F5;">
 				<h5>Account Profile's details</h5>
 				<p>Your name : </p>
 				<p>{{user.name}}</p>
@@ -1019,7 +1022,7 @@
 		
 		<!--- for smart phones and tablets --->
 		
-		<div class = "hidden-desktop" style = "border-radius:5px;background:#E5E5E8;margin:auto;padding:1px; max-width:98%;">
+		<div class = "hidden-desktop" style = "border-radius:5px;background:#F5F5F5;margin:auto;padding:1px; max-width:98%;">
 			<p>
 				<i>Please edit information you want to edit</i>
 			</p>
