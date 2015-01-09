@@ -19,6 +19,8 @@
 		}
 
 	}
+
+	
 {% endblock %}
 
 
@@ -26,7 +28,7 @@
 
 
 <!-- sign in form for registered user in IMS system-->
-<div class  = "row" style = "margin-top:13%;pading:5%;">
+<div class  = "row" style = "margin-top:10%;pading:5%;">
 
 	<div class = "col-sm-3 col-md-4 col-lg-4 "></div>
 
@@ -48,7 +50,7 @@
 					<div class="input-group-addon">
 						<span class = "glyphicon glyphicon-lock" aria-hidden="true"></span>
 					</div>
-					<input type="password" class="form-control" name = "registered_password" id="registered_password" placeholder="User password">
+					<input type="password" class="form-control" name = "registered_password" id="registered_password" placeholder="User password" onpaste = "return false;">
 				</div>
 			</div>
 
@@ -66,9 +68,9 @@
 			<!-- for pop up sign up form for registration purpose-->
 
 			<a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Sign Up</a><br>
-			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
 			  <div class="modal-dialog" >
-			    <div class="modal-content" style = "background:lighblue;">
+			    <div class="modal-content" >
 			      
 			    <div class="modal-header">
 			    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -79,8 +81,30 @@
 			    <div class="modal-body" style = "min-height:300px;">
 
 			    	<form role = "form" onsubmit = "return checkSignUpForm()">
+			    		{% csrf_token %}
 			    		<div class = "form-group">
+			    			<input type="text" class="form-control" id="full_name" name = "full_name" placeholder="Full name">
+			    		</div>
 
+			    		<div class = "form-group">
+			    			<input type="email" class="form-control" id="email" name = "email" placeholder="E mail">
+			    		</div>
+
+			    		<div class = "form-group">
+			    			<input type="text" class="form-control" id="mobile_number" name = "mobile_number" placeholder="Mobile number">
+			    		</div>
+
+			    		<div class = "form-group">
+			    			<p id = "password_message" style = "color:red;"></p>
+			    			<input type="password" class="form-control" id="password" name = "password" placeholder="Password" onpaste="return false;">
+			    		</div>
+
+			    		<div class = "form-group">			    			
+			    			<input type="password" class="form-control" id="confirm_password" name = "password" placeholder = "Re-type password" onpaste="return false;">
+			    		</div>
+
+			    		<div class = "form-group">
+			    			<button class = "btn btn-primary form-control">Sign Up</button>
 			    		</div>
 			    	</form>
 
