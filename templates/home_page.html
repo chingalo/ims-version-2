@@ -1,5 +1,26 @@
 {% extends "base.html" %}
 
+<!-- addition script-->
+{% block extra_scriptt %}
+	function checkSignInForm(){
+		email = document.getElementById('registered_email').value;
+		password = document.getElementById('registered_password').value;
+
+		if(email == ""){
+		
+			document.getElementById('registered_email').focus();
+			return false;
+		}
+
+		if(password == ""){
+
+			document.getElementById('registered_password').focus();
+			return false;
+		}
+
+	}
+{% endblock %}
+
 
 {% block contents %}
 
@@ -9,9 +30,9 @@
 
 	<div class = "col-sm-3 col-md-4 col-lg-4 "></div>
 
-	<div class = "col-xs-12 col-sm-6 col-md-4 col-lg-4 " style = "padding:2%; background-color:lightblue;">
+	<div class = "col-xs-12 col-sm-6 col-md-4 col-lg-4 " style = "padding:2%; background-color:lightblue;border-radius:5px;">
 		<p >message</p>
-		<form role = "form" onsubmit = "return checkSignInPassword()">
+		<form role = "form" onsubmit = "return checkSignInForm()">
 			{% csrf_token %}
 			<div class="form-group">
 				<div class = "input-group">
@@ -35,10 +56,42 @@
 				<button class = "btn btn-primary form-control">Sign In</button>
 			</div>
 
-
 		</form>	
+		<div style = "margin-top:1%;padding:1%;text-align:center;">
+			<a href="#">forgetting password?</a><br>
+			<p>or</p>
 
 
+
+			<!-- for pop up sign up form for registration purpose-->
+
+			<a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Sign Up</a><br>
+			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" >
+			    <div class="modal-content" style = "background:lighblue;">
+			      
+			    <div class="modal-header">
+			    	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			    	<h4 class="modal-title">Registration form</h4>
+			    </div>
+
+			    <!-- sign up form-->
+			    <div class="modal-body" style = "min-height:300px;">
+
+			    	<form role = "form" onsubmit = "return checkSignUpForm()">
+			    		<div class = "form-group">
+
+			    		</div>
+			    	</form>
+
+			    </div>
+
+
+			    </div>
+			  </div>
+			</div>
+
+		</div>
 	</div>
 
 	<div class = "col-sm-3 col-md-4 col-lg-5 "></div>

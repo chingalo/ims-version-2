@@ -16,13 +16,16 @@
 
 		<!-- favicon for the website -->
 		<link rel="icon" href="{{STATIC_URL}}img/ims.png" type="image/x-icon">	
+		<script type="text/javascript">
+			{% block extra_scriptt %}{% endblock %}
+		</script>
 
 	</head>
 	
 	<body background="{{STATIC_URL}}img/background.png">
 		
 
-		<div class = "container-fluid" style = "padding-right:2%;">
+		<div class = "container-fluid" style = "padding-right:2.8%;">
 			{% block contents %}{% endblock %}
 		</div>
 
