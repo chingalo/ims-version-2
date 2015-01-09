@@ -1,152 +1,39 @@
-
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang='en'>
+	
 	<head>
-		<title >IMS</title>
+		<title >Issues Manager System</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
-		<!---------------styles files---------------------------------------->
-		<link rel="icon" href="{{STATIC_URL}}img/ims.png" type="image/x-icon">
+		<!-- styles files for the website -->		
 		<link rel="stylesheet" media='screen' href="{{STATIC_URL}}css/bootstrap.css" >
 		<link rel="stylesheet" media='screen' href="{{STATIC_URL}}css/jquery-ui.css" >
 		<link rel="stylesheet" media='screen' href="{{STATIC_URL}}css/bootstrap-responsive.css" >
 		<link rel="stylesheet" media='screen' href="{{STATIC_URL}}css/docs.css" >
 		<link rel="stylesheet" media='screen' href="{{STATIC_URL}}css/prettify.css" >
-		<link rel="stylesheet" media= 'screen' href="{{STATIC_URL}}css/style.css">
-		<link rel="stylesheet" media= 'screen' href="{{STATIC_URL}}css/font-awesome/css/font-awesome.min.css">		
-		<script src = "{{STATIC_URL}}js/validation.js" type = "text/javascript"></script>
-		<script src="{{STATIC_URL}}js/jquery-1.10.2.js" type = "text/javascript"></script>
-      	<script src="{{STATIC_URL}}js/jquery-ui.js" type = "text/javascript"></script>
-      	<script src = "{{STATIC_URL}}js/customeffect.js" type = "text/javascript"></script>
-      	<script src = "{{STATIC_URL}}js/tabletphone.js" type = "text/javascript"></script>
-      	<script type = "">
-      	//validate form for request new password
-		function newPasswordRequest(){
-			allemails = {{allemails|safe}}
-			var emailForNewPasswordRequest = document.getElementById('emailForRequestNewPassword').value;
-			var atpos = emailForNewPasswordRequest.indexOf('@');
-			var atdot = emailForNewPasswordRequest.lastIndexOf('.');
+		<link rel="stylesheet" media= 'screen' href="{{STATIC_URL}}css/font-awesome/css/font-awesome.min.css">	
 
-			if(atpos < 1 || atdot < atpos+2 || atdot+2 >= emailForNewPasswordRequest.length){
-				alert('Incorrect email');
-				return false;
-				}
-			else{
-				var tester = 0;
-				for (var i = 0;i < allemails.length; i++){
-					if (allemails[i] == emailForNewPasswordRequest){
-						tester = 1;						
-						}
-					}
-				if(tester == 1){
-					alert('Link to change new password\nhas been sent to ' + "\" " + emailForNewPasswordRequest + " \"");
-					return true;
-					}
-				else{
-					alert('User with ' + "\" " + emailForNewPasswordRequest + " \" e-mail doesn't exist in IMS. \nPlease rechack your password");
-					return false;
-					}
-				
-				}		
-			}
-      	</script>
-      	<script>
-			$(function() {
-				var allUsers = {{userList|safe}}
-				
-				$( "#nameOfCollaborator" ).autocomplete({
-					 source: allUsers
-					});
-				});	
-      	</script>  
-      	<script>
-			$(function() {
-				var availableProjects = {{allProjects|safe}}
-				
-				$( "#nameOfProject" ).autocomplete({
-					 source: availableProjects
-					});
-				});	
-      	</script>
-      	<script>
-			function selectProject(){
-				var availableProjects = {{allProjects|safe}};
-				var nameOfProject  = document.getElementById('nameOfProject').value;
-				if(nameOfProject == ''){
-					alert('Please enter the name of project before submit');
-					return false;
-					}
-				else{
-					var tester = 0;
-					for(var i = 0;i < availableProjects.length; i++){
-						if (availableProjects[i] == nameOfProject){
-							tester = 1;
-							}
-						}
-					if(tester == 0){
-						alert('Project with name \"'+nameOfProject + "\" does not exist in the system\nplease try again");
-						return false;
-						}
-					else{ 
-						alert('Ready for submission\nSoon you will be directed to another URL');
-						return true;
-						}
-					}				
-				}
-      	</script> 
-      	<script>
-			function chechEmail(){
-				var emailList = {{userEmailData|safe}};
-				var email = document.getElementById('email').value;
-				var atpos = email.indexOf('@');
-				var atdot = email.lastIndexOf('.');
+		<!-- favicon for the website -->
+		<link rel="icon" href="{{STATIC_URL}}img/ims.png" type="image/x-icon">	
 
-				if(atpos < 1 || atdot < atpos+2 || atdot+2 >= email.length){
-					alert('incorrect email');
-					document.getElementById('email').focus();
-					}
-				for(var i = 0; i < emailList.length ; i++){
-					if(emailList[i] == email){
-						alert("In the system, user with " + email+ " exist!!!");
-						document.getElementById('email').focus();
-						}
-					}		
-				}	    	
-      	
-      	</script>    	
-      	<script>
-			function addCollaborator(){
-				var users = {{userList|safe}};
-				var name = document.getElementById('nameOfCollaborator').value;
-				var numberOfUser = users.length;
-				var result = 0;
-				for( var i=0;i<numberOfUser;i++){
-					if(users[i] == name){
-						result = 1;
-						}						
-					}
-				if(result == 1){
-					alert("Ready to add "+ name + " in your project");
-					return true;
-					}	
-				else{
-					alert("The user is not registered in the system...");
-					return false;
-					}							
-				}
-      	</script>
 	</head>
-<body>
-	<div class = "body_page">
-		{% block container %}{% endblock %}
+	
+	<body >
 		
-		<div class = "container-fluid myFooter">
-			<hr>
-			<p>Powered by Unyayo Systems Limited<br>
-			&copy; {% now " Y" %}<br> all right reserved</p>		
+
+		<div class = "container-fluid">
+			{% block contents %}{% endblock %}
 		</div>
+
+
+		<!-- necessary scripts for the website -->
+		<script src="{{STATIC_URL}}js/jquery-1.10.2.js" type = "text/javascript"></script>
+      	<script src="{{STATIC_URL}}js/jquery-ui.js" type = "text/javascript"></script>		
+		<script src="{{STATIC_URL}}js/bootstrap.min.js" type = "text/javascript"></script>
 		
-	</div>
-</body>
+		
+		
+	
+	</body>
 </html>	

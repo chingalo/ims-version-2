@@ -1,146 +1,155 @@
+/*
+	99Lime.com HTML KickStart by Joshua Gatcke
+	style.css
+
+*/
+
+/*---------------------------------
+	IMPORTS
+-----------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
+
+/*---------------------------------
+	OVERRIDES
+-----------------------------------*/
+h1,h2,h3,h4,h5,h6{
+font-family: "Arimo", arial, verdana, sans-serif;
+font-weight:normal;
+}
+
+thead th,
+tbody th{
+font-family: "Arimo", arial, verdana, sans-serif;
+}
+
+button,
+a.btn,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]{
+font-family: "Arimo", arial, verdana, sans-serif;
+}
+
+.menu{
+font-family: "Arimo", arial, verdana, sans-serif;
+}
+
+blockquote{
+font-family: "Arimo", arial, verdana, sans-serif;
+}
+
+/*---------------------------------
+	LAYOUT
+-----------------------------------*/
 body{
-margin:0px;
-padding:0px;
-background:;
-text-align:justify;
+margin:0;
+padding:0 0 0 0;
+color:#000;
+background:#efefef url(css/img/gray_jean.png);
+font:normal 0.9em/150% 'Arimo', arial, verdana, sans-serif;
+text-shadow: 0 0 1px transparent; /* google font pixelation fix */
 }
 
-.body_page{
-max-width:75%;
-margin:10px auto;
-min-height:500px;
-background:;
-border-radius:8px;
-border:1px solid #E6E6FA;
+#wrap{
+width:100%;
+background:#fff;
+margin:30px auto 30px auto;
+padding:0 2%;
+border:1px solid #ccc;
 }
 
-.login{
-margin-top:3px;
-padding-bottom:0px;
-}
-.newpassword{
-padding-bottom:3px;
+
+#footer{
 text-align:center;
-}
-.signup{
-padding-left:0px;
-max-width:95%;
-margin:auto;
-}
-
-.signup form{
-margin-bottom:10px;
-padding:2px 5px;
-}
-.warninginfo{
-padding:2px;
-text-align:center;
-color:#F20C1D;
-font-style:italic;
-}
-.importantinfoOrAnimation{
-padding:10px;
-border-radius:10px;
-border:1px solid #BFBFBF;
-height:360px;
-
-}
-.importantinfoOrAnimation p{
-margin-top:20px;
-color:#1E90FF;
-}
-.importantinfoOrAnimation h5{
-color:#4D4D4D;
-font-size:16px;
-font-style:italic;
-}
-.headerforsignup{
-color:blue;
-font-weight:bold;
-font-size:16px;
-padding:5px 15px 10px 10px;
-max-width:50%;
-margin:auto;
+padding:20px;
+margin:0;
+border-top:1px solid #ddd;
+color:#999;
+font-size:0.8em;
+text-shadow:0px 1px 1px #fff;
+position: relative;
+top:0;
+left:0;
+background:#fff;
 }
 
-.myFooter{
-text-align:center;
+	#link-top{
+	display:none;
+	}
+
+/* NAV BAR*/
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width: 100%;
+background:#000;
+color:#fff;
+z-index:1000;
 }
 
-.navigation{
-margin:3px 3px 6px 3px;
+	.navbar #logo{
+	position:absolute;
+	top:0;
+	right:0;
+	padding:0.5em 1em;
+	font-size: 1.7em;
+	color:#efefef;
+	text-decoration:none;
+	}
 
-}
-
-.form-search{
-padding:5px 0px 0px 2px;
-}
-
-.useInformation{
-padding:7px 4px;
-margin-right:3px;
-}
-
-.asideNavigation{
-padding:5px 7px;
-}
-.loginUserContents{
-margin-top:15px;
-}
-.comments{
-overflow-y:scroll;
-height:200px;
-}
-.statusLog{
-overflow-y:scroll;
-height:300px;
-
-}
-.emptyProject{
-min-height:270px;
-}
-.emptyIssues{
-min-height:270px;
-}
-.profile{
-margin:5px;
-padding:2px;
-background:#E5E5E5;
-border-radius:5px;
-}
-.profile table{
-margin:5px;
-}
-.profile h5{
-text-align:center;
-}
-
-.addCollaborator h5{
-text-align:center;
-}
-
-.addCollaborator form{
-border:1px solid #E5E5E5;
-padding:10px;
-padding-top:20px;
-margin:5px;
-border-radius:7px;
-}
-.collaboratorList{
-border:1px solid #E5E5E5;
-padding:10px;
-margin:5px;
-border-radius:7px;
-}
-
-.signupForm{
-border:1px solid red;
-padding:10px;
-margin:5px;
-border-radius:7px;
-}
+	.navbar span{
+	color:#86dc00;
+	}
 
 
+	.navbar ul{
+	display:inline-block;
+	margin:0;
+	padding:0;
+	}
 
+		.navbar li{
+		margin:0;
+		padding:0;
+		list-style-type:0;
+		display:inline-block;
+		}
 
+		.navbar li a{
+		display:inline-block;
+		color:#efefef;
+		padding:1em 1.3em;
+		text-decoration:none;
+		text-transform: uppercase;
+		line-height:100%;
+		font-size: 1.2em;
+		}
 
+.callout{
+background:#4598ef;/*#86dc00;*/
+padding:3em 0;
+color:#fff;
+box-shadow:inset 0 0 10px rgba(0,0,0,0.2);
+text-align: center;
+text-shadow:0px 1px 3px rgba(0,0,0,0.2);
+display:block;
+}
+	.callout + div.grid{margin-top:50px;}
+	 a.callout{cursor:pointer;}
+	 .callout i.icon-4x{font-size:6em;}
+	 .callout h4{margin-bottom:30px;}
+	 .callout-top{margin:50px 0 0 0;}
+	 .callout p{margin-bottom:0;}
+	 .callout .button{margin-top:10px;}
+	 .callout.green{background:#19ad0b;/*#86dc00;*/}
+
+#mc_embed_signup{
+padding:30px 0;
+}
+
+#ui-preview{
+border:5px solid #ddd;
+margin:30px 0;
+display:block;
+}
