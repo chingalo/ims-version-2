@@ -34,7 +34,7 @@
 
 	<div class = "col-xs-12 col-sm-6 col-md-4 col-lg-4 " style = "padding:2%; background-color:lightblue;border-radius:5px;">
 		<p >message</p>
-		<form role = "form" onsubmit = "return checkSignInForm()">
+		<form role = "form" action = "{% url 'signin' %}" method = "POST" onsubmit = "return checkSignInForm()">
 			{% csrf_token %}
 			<div class="form-group">
 				<div class = "input-group">
@@ -80,7 +80,7 @@
 			    <!-- sign up form-->
 			    <div class="modal-body" style = "min-height:300px;">
 
-			    	<form role = "form" onsubmit = "return checkSignUpForm()">
+			    	<form role = "form" action = "{% url 'signup' %}" method = "POST" onsubmit = "return checkSignUpForm()">
 			    		{% csrf_token %}
 			    		<div class = "form-group">
 			    			<input type="text" class="form-control" id="full_name" name = "full_name" placeholder="Full name">
