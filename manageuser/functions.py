@@ -1,3 +1,0 @@
-from project.models import *
-
-
