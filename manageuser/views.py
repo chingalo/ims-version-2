@@ -23,14 +23,32 @@ from project.models import *
 def home_page(request):
 
 	context = {}
-	return render(request,'home_page.html',context)
+	return render(request,'index.html',context)
 
 
 #to handle all requests for sign in into the system
 def signin(request):
 
-	context = {}
-	return render(request, 'base.html', context)
+	loginUser = ""
+
+	if request.POST:
+		#taking values
+		form = request.POST
+		email = form.getlist('registered_email')
+		password = form.getlist('registered_password')
+
+		user_availability = checkUser(email[0],password[0])
+
+		if user_availability == 1:
+
+			loginUser = Users.objects.get(e_mail = email[0])
+
+			context = {'loginUser':loginUser}
+			return render(request, 'home_page.html', context)
+
+		
+
+	return HttpResponseRedirect('/')	
 
 
 #to hndle all requests for new user to be registered into new system
@@ -38,3 +56,30 @@ def signup(request):
 
 	context = {}
 	return render(request, 'base.html', context)	
+
+
+
+
+
+
+
+
+
+####################################### functions  for handling some actions repeatedly##################################
+#checking for available users
+def checkUser(email,password):
+
+	registered_users = Users.objects.all()
+
+	available = 0
+
+	for registered_user in registered_users:
+
+		if registered_user.e_mail == email and registered_user.password == password:
+			available = 1
+
+
+	return available
+		
+
+

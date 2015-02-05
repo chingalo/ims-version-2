@@ -5,6 +5,7 @@
 	<head>
 		<title >Issues Manager System</title>
 		<meta charset="utf-8">
+		<meta name = "keywords" content = "IMS,ims,joseph chingalo,chingalo">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
 		<!-- styles files for the website -->		
 		<link rel="stylesheet" media='screen' href="{{STATIC_URL}}css/bootstrap.css" >
@@ -19,13 +20,19 @@
 		<script type="text/javascript">
 			{% block extra_scriptt %}{% endblock %}
 		</script>
+		<style type="text/css">
+			
+
+		</style>
 
 	</head>
+	<!-- {{STATIC_URL}}img/background.png-->
 	
-	<body background="{{STATIC_URL}}img/background.png">
+	<body >	
 		
 
-		<div class = "container-fluid" style = "padding-right:2.8%;">
+		<div class = "container-fluid">
+			<h3 style = "text-align:center;margin-bottom:3%;">Issues Management System<br> IMS</h3>
 			{% block contents %}{% endblock %}
 		</div>
 
