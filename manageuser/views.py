@@ -26,6 +26,7 @@ def home_page(request):
 	return render(request,'index.html',context)
 
 
+
 #to handle all requests for sign in into the system
 def signin(request):
 
