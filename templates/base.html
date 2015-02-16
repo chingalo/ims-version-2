@@ -21,10 +21,7 @@
 			{% block extra_scriptt %}{% endblock %}
 		</script>
 		<style type="text/css">
-		
-			.footer{
-				
-			}
+			
 
 		</style>
 
@@ -32,9 +29,29 @@
 	<!-- {{STATIC_URL}}img/background.png-->
 	
 	<body >	
-		
+		<!-- title for the IMS app-->
+		{% if username %}
+		<div class = "container-fluid">
+			<div class = "row-fluid" style = "text-align:center;margin-bottom:2%;border-bottom:2px solid lightblue;">
+				<h2 class = "hidden-xs">Unyanyo Issues Manager App</h2>
+				<h4 class = "visible-xs">Uyanyo IMS App</h4>
+			</div>
+		</div>
+		<div class = "container-fluid">
+			<div class = "row-fluid">
+				<!-- title for IMS-->
+				<div class = "col-xs-10 col-sm-10 col-md-10 col-lg-10" >
+					<p>Welcome, <i>{{username}}</i></p>
+				</div>
+				<div class = "col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				<div class = "col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+			</div>
+		</div>
+		{% endif %}
+		<!-- end for title for ims app-->
 
-		<div class = "container-fluid" style = "margin:auto;">
+		<div class = "container-fluid">
+
 			
 			{% block contents %}{% endblock %}
 		</div>

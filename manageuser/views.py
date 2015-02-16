@@ -43,8 +43,9 @@ def signin(request):
 		if user_availability == 1:
 
 			loginUser = Users.objects.get(e_mail = email[0])
+			username = getUsername(loginUser.id)
 
-			context = {'loginUser':loginUser}
+			context = {'loginUser':loginUser,'username':username}
 			return render(request, 'home_page.html', context)
 
 		
@@ -81,6 +82,18 @@ def checkUser(email,password):
 
 
 	return available
+
+#return username
+def getUsername(user_id):
+
+	name = ""
+
+	loginUser = Users.objects.get(id = user_id);
+	namelist =  loginUser.name.split(" ")
+	name = namelist[0]
+
+	return name
+	
 		
 
 
