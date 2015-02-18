@@ -47,7 +47,7 @@ def signin(request):
 
 			#all prpjetcs for a given user
 			projects = Project_details.objects.filter(project_owner = loginUser)
-
+			
 			context = {'loginUser':loginUser,'username':username,'projects':projects}
 			return render(request, 'user_login_home.html', context)
 
