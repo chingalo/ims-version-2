@@ -37,8 +37,8 @@
 		{% if username %}
 		<div class = "container-fluid">
 			<div class = "row-fluid" style = "text-align:center;margin-bottom:2.5%;border-bottom:2px solid lightblue;">
-				<h2 class = "hidden-xs">Unyanyo Issues Manager App</h2>
-				<h4 class = "visible-xs">Uyanyo IMS App</h4>
+				<h2 class = "hidden-xs">Unyayo Issues Manager App</h2>
+				<h4 class = "visible-xs">Unyayo IMS App</h4>
 			</div>
 		</div><!-- end for title for the IMS app-->
 
@@ -79,7 +79,7 @@
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Projects</a></li>
+						<li><a href="{% url 'viewAllProject' loginUser.id %}">Projects</a></li>
 						<li><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Create Project</a></li>
 						<li><a href="#">My profile</a></li>
 					</ul>
