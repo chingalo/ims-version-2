@@ -43,11 +43,14 @@ def signin(request):
 		if user_availability == 1:
 
 			loginUser = Users.objects.get(e_mail = email[0])
+			loginUser.login_status = "log_in"
+			loginUser.save()
+
 			username = getUsername(loginUser.id)
 
 			#all prpjetcs for a given user
 			projects = Project_details.objects.filter(project_owner = loginUser)
-			
+
 			context = {'loginUser':loginUser,'username':username,'projects':projects}
 			return render(request, 'user_login_home.html', context)
 
@@ -64,8 +67,13 @@ def signup(request):
 
 
 
+def signout(request, user_id):
 
+	logoutUser = Users.objects.get(id = user_id)
+	logoutUser.login_status = "log_out"
+	logoutUser.save()
 
+	return HttpResponseRedirect('/')
 
 
 

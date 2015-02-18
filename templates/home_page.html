@@ -57,7 +57,17 @@
 
 
 	<!-- contents part-->
+	{% if loginUser.login_status == "log_in" %}
+
 	{% block user_login_contents %}{%endblock%}
+
+	{% else %}
+
+	<script type="text/javascript">
+		window.location.href = "/"
+	</script>
+	{% endif %}
+	
 	
 </div>
 
