@@ -23,22 +23,38 @@
 	<!-- end of menu for other devices other than mobiles-->
 
 	<!-- pop up form for create new project-->
-	<div class="modal  bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+	<div class="modal fade  bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
 		<div class="modal-dialog" >
 			<div class="modal-content" >
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title">form</h4>
-					<div class="modal-body" style = "min-height:300px;">
+					<h4 class="modal-title">Add New Project's form</h4>
+				</div>	
+				<div class="modal-body" style = "min-height:200px;">
 
-						<!-- form for create new project-->
+					<!-- form for create new project-->
+					<form role = "form" onsubmit = "return validateNewProject()">
+						{% csrf_token %}
+						<div class = "form-group">
+			    			<input type="text" class="form-control" id="title_of_project" name = "title_of_project" placeholder="Title Of the project">
+			    		</div>
+			    		<div class = "form-group">
+			    			<textarea class = "form-control" id = "description_of_project" name = "description_of_project" row = "10" placeholder = "What is the project about?"></textarea>
+			    		</div>
+			    		<div class = "form-group">
+			    			<input class="btn btn-info form-control" type="submit" value="Submit">
+			    		</div>	
+					</form>
 
-					</div>
 				</div>
 			</div>
-			
 		</div>
+			
 	</div>
+	
+	<!-- end of pop up form for create new project-->
+
+
 
 	<!-- contents part-->
 	{% block user_login_contents %}{%endblock%}
