@@ -45,8 +45,11 @@ def signin(request):
 			loginUser = Users.objects.get(e_mail = email[0])
 			username = getUsername(loginUser.id)
 
-			context = {'loginUser':loginUser,'username':username}
-			return render(request, 'home_page.html', context)
+			#all prpjetcs for a given user
+			projects = Project_details.objects.filter(project_owner = loginUser)
+
+			context = {'loginUser':loginUser,'username':username,'projects':projects}
+			return render(request, 'user_login_home.html', context)
 
 		
 

@@ -11,7 +11,19 @@
 {% block contents %}
 <!-- contents part -->
 <div class = "row-fluid" style = "margin-bottom:2%;border-bottom: 2px solid lightblue;border-top: 2px solid lightblue;padding:1%;border-radius:5px;min-height:200px;">
-	<div > Main body</div>
+	
+	<!-- menu for other devices other than mobiles -->
+	<div class = "hidden-xs col-sm-4 col-md-3 col-lg-3">
+		<ul class="nav nav-pills nav-stacked">
+			<li role="presentation"><a href="#">Projects</a></li>
+			<li role="presentation"><a href="#">Create Project</a></li>
+			<li role="presentation"><a href="#">My profile</a></li>
+		</ul>
+	</div>
+	<!-- end of menu for other devices other than mobiles-->
+
+	<!-- contents part-->
+	{% block user_login_contents %}{%endblock%}
 	
 </div>
 
@@ -19,7 +31,8 @@
 <div class = "row-fluid" >
 	<div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12" style = "margin-top: 1%;	">
 		<p style = "text-align:center;margin-top:1.5%;">
-			Powered by Unyayo Systems Ltd
+			Powered by Unyayo Systems Limited<br>
+			&copy; {% now " Y" %}<br> all right reserved
 		</p>
 	</div>	
 </div>
