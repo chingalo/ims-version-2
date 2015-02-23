@@ -22,32 +22,134 @@
 	<!--  actions button-->
 	<div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-		<button style = "padding-right:5%;margin-top:1%;"  type="button" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="Add collaborator on a {{project.title}} project">
+		<button style = "padding-right:5%;margin-top:1%;border-radius:0px;"  type="button" class="btn btn-info" data-toggle="modal" data-target="#add_collaborator">
 			<span class = "glyphicon glyphicon-plus"> Collaborator</span>
 		</button>
 	
-		<button style = "padding-right:5%;margin-top:1%;"  type="button" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="Create issue on a {{project.title}} project">
+		<button style = "padding-right:5%;margin-top:1%;border-radius:0px;"  type="button" class="btn btn-info" data-toggle="modal" data-target="#add_issue">
 			<span class = "glyphicon glyphicon-plus"> Issue</span>
 		</button>
 	
-		<button style = "padding-right:5%;margin-top:1%;"  type="button" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="Edit details for a {{project.title}} project">
+		<button style = "padding-right:5%;margin-top:1%;border-radius:0px;"  type="button" class="btn btn-info" data-toggle="modal" data-target="#edit_project">
 			<span class = "glyphicon glyphicon-pencil"> Edit</span>
 		</button>
 
-		<button style = "padding-right:5%;margin-top:1%;"  type="button" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="Delete {{project.title}} project">
+		<button style = "padding-right:5%;margin-top:1%;border-radius:0px;"  type="button" class="btn btn-info" data-toggle="modal" data-target="#delete_project">
 			<span class = "glyphicon glyphicon-trash"> Delete</span>
 		</button>
 
-		<button style = "padding-right:5%;margin-top:1%;" type="button" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="View issues on a {{project.title}} project">
+		<button style = "padding-right:5%;margin-top:1%;border-radius:0px;" type="button" class="btn btn-info" data-toggle="modal" data-target="#view_issues">
 			<span class = "glyphicon glyphicon-eye-open"> Issues</span>
 		</button>
 
-		<button style = "padding-right:5%;margin-top:1%;"  type="button" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="View collaborators on a {{project.title}} project">
+		<button style = "padding-right:5%;margin-top:1%;border-radius:0px;"  type="button" class="btn btn-info" data-toggle="modal" data-target="#view_collaborators" >
 			<span class = "glyphicon glyphicon-eye-open"> Collaborators</span>
 		</button>
 	</div>
 
 	<!-- pop up pannel for above actions button-->
+
+	<!-- pop up modal for add new collaborator on a given project-->
+	<div>
+		<div id = "add_collaborator" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Add collaborator on {{project.title|title}} project</h4>
+					</div>
+					<div class="modal-body" style = "min-height:300px;">
+						comming soon!!
+					</div>
+				</div>
+			</div>						
+		</div>
+	</div>
+
+	<!-- create issue for a given project-->
+	<div>
+		<div id = "add_issue" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Create issue on {{project.title|title}}</h4>
+					</div>
+					<div class="modal-body" style = "min-height:300px;">
+						comming soon!!!
+					</div>
+				</div>
+			</div>						
+		</div>
+	</div>
+
+	<!-- modal for edit details for a given project-->
+	<div>
+		<div id = "edit_project" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Edit {{project.title|title}} project</h4>
+					</div>
+					<div class="modal-body" style = "min-height:300px;">
+
+					</div>
+				</div>
+			</div>						
+		</div>
+	</div>
+
+	<!-- modla for delete the project-->
+	<div>
+		<div id = "delete_project" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Delete {{project}} project</h4>
+					</div>
+					<div class="modal-body" style = "min-height:300px;">
+						comming soon!!
+					</div>
+				</div>
+			</div>						
+		</div>
+	</div>
+
+	<!-- modal for view all issues on a given project-->
+	<div>
+		<div id = "view_issues" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">List of issues on {{project.title|title}} project</h4>
+					</div>
+					<div class="modal-body" style = "min-height:300px;">
+						comming soon!!
+					</div>
+				</div>
+			</div>						
+		</div>
+	</div>
+
+	<!-- modla for view collaborators for a given project-->
+	<div>
+		<div id = "view_collaborators" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">List of Collaborators on {{project.title}} project</h4>
+					</div>
+					<div class="modal-body" style = "min-height:300px;">
+						comming soon!!
+					</div>
+				</div>
+			</div>						
+		</div>
+	</div>
 	
 </div>
 
