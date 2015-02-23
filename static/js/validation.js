@@ -70,3 +70,26 @@ function validateNewProject(){
 	}
  return false;
 }
+
+
+
+//validate edit project form
+
+function validateEditProject(){
+
+	//taking values
+	titleOfProject = document.getElementById('edited_title_of_project').value;
+	descriptionOfProject = document.getElementById('edited_description_of_project').value;
+
+	//checking for empty form
+	if (titleOfProject.length == 0 || titleOfProject == null) {
+		document.getElementById('edited_title_of_project').focus();
+		return false;
+	}
+
+	if (descriptionOfProject.length == 0 || descriptionOfProject == null) {
+		document.getElementById('edited_description_of_project').focus();
+		return false;
+	}
+ return false;
+}

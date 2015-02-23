@@ -60,13 +60,19 @@
 					</div>
 					<div class="modal-body" style = "min-height:300px;">
 						comming soon!!
+
+						<form role = "form" onsubmit = "return ">
+							{% csrf_token %}
+							
+						</form>
 					</div>
 				</div>
 			</div>						
 		</div>
 	</div>
 
-	<!-- create issue for a given project-->
+
+	<!--pop up modal for  create issue for a given project-->
 	<div>
 		<div id = "add_issue" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -76,14 +82,18 @@
 						<h4 class="modal-title">Create issue on {{project.title|title}}</h4>
 					</div>
 					<div class="modal-body" style = "min-height:300px;">
-						comming soon!!!
+						<form role = "form" onsubmit = "return ">
+							{% csrf_token %}
+							comming soon
+						</form>
 					</div>
 				</div>
 			</div>						
 		</div>
 	</div>
 
-	<!-- modal for edit details for a given project-->
+
+	<!--pop up modal for edit details for a given project-->
 	<div>
 		<div id = "edit_project" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -93,14 +103,28 @@
 						<h4 class="modal-title">Edit {{project.title|title}} project</h4>
 					</div>
 					<div class="modal-body" style = "min-height:300px;">
-
+						<form role = "form" onsubmit = "return validateEditProject()">
+							{% csrf_token %}
+							<div class = "form-group">
+			    				<input type="text" class="form-control" id="edited_title_of_project" value = "{{project.title}}" name = "edited_title_of_project" placeholder="Title Of the project">
+			    			</div>	
+			    			<div class = "form-group">
+			    				<textarea class = "form-control" id = "edited_description_of_project" name = "edited_description_of_project" row = "15" placeholder = "What is the project about?">{{project.description}}</textarea>
+			    			</div>
+			    			<div class = "form-group">
+			    				<button class = "btn btn-info form-control" >
+			    					<span class = "glyphicon glyphicon-save"> Save changes</span>
+			    				</button>
+			    			</div>
+						</form>
 					</div>
 				</div>
 			</div>						
 		</div>
 	</div>
 
-	<!-- modla for delete the project-->
+
+	<!--pop up modal for delete the project-->
 	<div>
 		<div id = "delete_project" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -117,7 +141,8 @@
 		</div>
 	</div>
 
-	<!-- modal for view all issues on a given project-->
+
+	<!--pop up modal for view all issues on a given project-->
 	<div>
 		<div id = "view_issues" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -134,7 +159,8 @@
 		</div>
 	</div>
 
-	<!-- modla for view collaborators for a given project-->
+
+	<!--pop up modal for view collaborators for a given project-->
 	<div>
 		<div id = "view_collaborators" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -150,7 +176,7 @@
 			</div>						
 		</div>
 	</div>
-	
+	<!-- end for pop up modlas for all action buttons-->
 </div>
 
 
