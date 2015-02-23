@@ -3,7 +3,23 @@
 {% block user_login_contents %}
 
 <div class = "col-xs-12 col-sm-8 col-md-9 col-lg-9">
-	<div>{{project}}</div>
+
+	<!-- prroject details-->
+	<div class = "row-fluid">
+		<h4 style = "color:#66afe9;">{{project|title}}</h4>
+		<p>			
+			<span style = "font-style: italic;font-size:12px;color:black;" >{{project.description}}</span>
+		</p>
+		<hr>
+		<p>
+			<span style = "font-style: italic;font-size:12px;color:#66afe9;" >Created on {{project.date_of_creation}} by {{project.project_owner|title}}</span>
+			
+		</p>
+		
+	</div>
+	<div class = "row-fluid">
+
+	</div>
 </div>
 
 

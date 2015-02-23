@@ -10,7 +10,7 @@
 		<ul class="nav nav-pills nav-stacked">
 			{% for project in projects %}
 
-			<li role="presentation">
+			<li role="presentation"> 
 				<a href="{% url 'viewProject' loginUser.id project.id %}">
 					{{project.title|title}}<br>
 					<span style = "font-style: italic;font-size:12px;color:black;" >{{project.description|truncatechars:59}}</span>
@@ -23,7 +23,7 @@
 
 		{% else%}
 		<p>You have no project at this time.</p>
-		<button data-toggle="modal" data-target=".bs-example-modal-lg" onclick="window.location.href='#'" class = "btn btn-primary" style = "border-radius:0px;padding:1%;">Create project</button>
+		<button data-toggle="modal" data-target=".create_project" onclick="window.location.href='#'" class = "btn btn-primary" style = "border-radius:0px;padding:1%;">Create project</button>
 		{% endif %}
 	</div>
 
