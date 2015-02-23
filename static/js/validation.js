@@ -68,7 +68,7 @@ function validateNewProject(){
 		document.getElementById('description_of_project').focus();
 		return false;
 	}
- return false;
+ return true;
 }
 
 
@@ -91,5 +91,5 @@ function validateEditProject(){
 		document.getElementById('edited_description_of_project').focus();
 		return false;
 	}
- return false;
+ return true;
 }

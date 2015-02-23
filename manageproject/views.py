@@ -47,3 +47,54 @@ def viewProject(request, user_id, project_id):
 	context = {'loginUser':loginUser,'username':username,'project':project}
 	return render(request, 'single_project.html',context)
 
+
+
+#viwe to add the project
+def addProject(request, user_id):
+
+	#checking for actual post and add new project
+	if request.POST:
+
+		#taking values form submitted form
+		form = request.POST
+		title = form.getlist('title_of_project')
+		description = form.getlist('description_of_project')
+
+		#saving the form for adding new project
+		loginUser = Users.objects.get(id = user_id)
+
+		newProject = Project_details()
+		newProject.project_owner = loginUser
+		newProject.title = title[0]
+		newProject.description = description[0]
+		newProject.save()
+
+
+
+	#redirect to view for all projects
+	return HttpResponseRedirect("/all-projects/" + str(user_id))
+
+
+#edit infor for a given project
+def editProject(request, user_id, project_id):
+
+	#checking for actual post and edit info for a given project
+	if request.POST:
+
+		#taking values form submitted form
+		form = request.POST
+		title = form.getlist('edited_title_of_project')
+		description = form.getlist('edited_description_of_project')
+
+		#saving changes for a given project
+		project = Project_details.objects.get(id = project_id)
+
+		project.title = title[0]
+		project.description = description[0]
+		project.save()
+
+
+
+	#redirect to view for all projects
+	return HttpResponseRedirect("/all-projects/" + str(user_id))
+

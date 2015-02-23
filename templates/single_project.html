@@ -103,7 +103,7 @@
 						<h4 class="modal-title">Edit {{project.title|title}} project</h4>
 					</div>
 					<div class="modal-body" style = "min-height:300px;">
-						<form role = "form" onsubmit = "return validateEditProject()">
+						<form role = "form" action = "{% url 'editProject' loginUser.id project.id %}" method = "POST" onsubmit = "return validateEditProject()">
 							{% csrf_token %}
 							<div class = "form-group">
 			    				<input type="text" class="form-control" id="edited_title_of_project" value = "{{project.title}}" name = "edited_title_of_project" placeholder="Title Of the project">

@@ -33,7 +33,7 @@
 				<div class="modal-body" style = "min-height:200px;">
 
 					<!-- form for create new project-->
-					<form role = "form" onsubmit = "return validateNewProject()">
+					<form role = "form" action = "{% url 'addProject' loginUser.id %}" method = "POST" onsubmit = "return validateNewProject()">
 						{% csrf_token %}
 						<div class = "form-group">
 			    			<input type="text" class="form-control" id="title_of_project" name = "title_of_project" placeholder="Title Of the project">
@@ -42,7 +42,9 @@
 			    			<textarea class = "form-control" id = "description_of_project" name = "description_of_project" row = "10" placeholder = "What is the project about?"></textarea>
 			    		</div>
 			    		<div class = "form-group">
-			    			<input class="btn btn-info form-control" type="submit" value="Submit">
+			    			<button type="submit" class="btn btn-info form-control">
+			    				<span class = ""> Add new project</span>
+			    			</button>			    			
 			    		</div>	
 					</form>
 
