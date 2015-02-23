@@ -133,8 +133,17 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title">Delete {{project}} project</h4>
 					</div>
-					<div class="modal-body" style = "min-height:300px;">
-						comming soon!!
+					<div class="modal-body" style = "min-height:250px;">
+						<div style = "margin-top:4%;padding-left:2%">
+							<!-- warning for delete the project-->
+							<p style = "font-size:15px;fot-style:italic;color:red;">Are you sure want to delete {{project.title|title}} project ? </p>
+
+							<!--button for delete the project-->
+							<div style = "max-width:100%;margin:auto;margin-top:3%;" >
+								<button style = "margin:1%;padding-right:4%;" type="button" class = "btn btn-info" data-dismiss="modal" ><span class = "glyphicon glyphicon-remove"></span> Cancel </button>
+								<button style = "margin:1%;padding-right:4%;" type="button" class = "btn btn-danger"><span class = "glyphicon glyphicon-ok"> Delete </span></button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>						
