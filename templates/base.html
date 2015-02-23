@@ -52,7 +52,7 @@
 
 				<div class = "col-xs-2 col-sm-1 col-md-1 col-lg-1">
 					{% if project %}
-					<a href="#"><span class = "glyphicon glyphicon-comment"></span>	</a>
+					<a href="{% url 'viewAllProject' loginUser.id %}"><span class = "glyphicon glyphicon-home"></span>	</a>
 					{% endif %}
 				</div>
 
