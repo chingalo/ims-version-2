@@ -139,9 +139,17 @@
 							<p style = "font-size:15px;fot-style:italic;color:red;">Are you sure want to delete {{project.title|title}} project ? </p>
 
 							<!--button for delete the project-->
-							<div style = "max-width:100%;margin:auto;margin-top:3%;" >
-								<button style = "margin:1%;padding-right:4%;" type="button" class = "btn btn-info" data-dismiss="modal" ><span class = "glyphicon glyphicon-remove"></span> Cancel </button>
-								<button style = "margin:1%;padding-right:4%;" type="button" class = "btn btn-danger"><span class = "glyphicon glyphicon-ok"> Delete </span></button>
+							<div style = "max-width:100%;margin:auto;margin-top:3%;" >								
+
+								<form role = "form" action = "{% url 'deleteProject' loginUser.id project.id  %}" method = "POST">
+									{% csrf_token %}
+									<div class = "form-group" style = "max-width:65%;margin:auto;">
+					    				<button class = "btn btn-danger form-control" >
+					    					<span class = "glyphicon glyphicon-ok"> Delete </span>
+					    				</button>
+					    			</div>									
+									
+								</form>								
 							</div>
 						</div>
 					</div>
