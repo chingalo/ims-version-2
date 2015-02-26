@@ -103,15 +103,10 @@ def editProject(request, user_id, project_id):
 
 ## delete the project
 def deleteProject(request, user_id, project_id):
-
-	#checking if button is clcked
-	if request.POST:
-
-		#select the project and delete it
-		project = Project_details.objects.get(id = project_id)
-		project.delete()
-
-
+	
+	project = Project_details.objects.get(id = project_id)
+	project.delete()
+	
 
 	#redirect to view for all projects
 	return HttpResponseRedirect("/all-projects/" + str(user_id))
